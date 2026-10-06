@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa"><title>Quick Share — send files simply</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark">↗</span> quickshare</a><a class="nav-link" href="#receive">Have a code? <span>Get a file →</span></a></header>
+  <main>
+    <section class="intro"><div class="eyebrow"><span class="live-dot"></span> A little space to share</div><h1>Files move.<br><span>Life keeps going.</span></h1><p>Send a file in seconds. It disappears when its time is up.</p></section>
+    <div class="layout">
+      <section class="panel upload-panel" aria-labelledby="upload-title">
+        <div class="panel-heading"><div><div class="step">01 <span>· SEND SOMETHING</span></div><h2 id="upload-title">Drop it here.</h2></div><span class="heading-icon">✳</span></div>
+        <form id="upload-form">
+          <label class="dropzone" id="dropzone" for="file-input"><input id="file-input" type="file" required><span class="upload-symbol">↑</span><strong id="file-label">Choose a file <span>or drop it here</span></strong><small id="size-hint">Loading upload limit…</small></label>
+          <div class="form-row"><label for="expiry">Keep it around for</label><div class="select-wrap"><select id="expiry" name="expiry_minutes"><option value="5">5 minutes</option><option value="10">10 minutes</option><option value="30" selected>30 minutes</option><option value="60">1 hour</option></select><span>⌄</span></div></div>
+          <button class="button button-dark" id="upload-button" type="submit"><span>Make a share link</span><span class="button-arrow">↗</span></button>
+          <div class="status" id="upload-status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+      <section class="panel receive-panel" id="receive" aria-labelledby="receive-title">
+        <div class="panel-heading"><div><div class="step">02 <span>· GET SOMETHING</span></div><h2 id="receive-title">Got a code?</h2></div><span class="heading-icon pale">⌁</span></div>
+        <p class="panel-copy">Paste the 10-character code someone sent you. We'll find the file.</p>
+        <form id="receive-form"><label class="code-label" for="code-input">YOUR SHARE CODE</label><input class="code-input" id="code-input" name="code" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="e.g. 4K8N2Q7L9P" required><button class="button button-accent" type="submit"><span>Find my file</span><span class="button-arrow">→</span></button><div class="status" id="receive-status" role="status" aria-live="polite"></div></form>
+        <div class="privacy-note"><span>◷</span><p><strong>Here for now, gone on time.</strong><br>Every share has an expiry. Files are removed automatically.</p></div>
+      </section>
+    </div>
+    <section id="result" class="result panel" hidden></section>
+  </main>
+  <footer><span>Made for the in-between.</span><span>Quick Share <i>·</i> No account needed</span></footer>
+  <script src="/app.js" defer></script>
+</body></html>
